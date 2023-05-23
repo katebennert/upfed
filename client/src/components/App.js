@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Switch, Route } from "react-router-dom";
-import Login from "../pages/Login";
-import { UserProvider } from "../context/user";
+// import { Switch, Route } from "react-router-dom";
+import Login from "./Login";
+// import { UserProvider } from "../context/user";
 
 function App() {
-  //use context
+  //use context after get state to work
   const [user, setUser] = useState(null);
 
   useEffect(() => {
@@ -20,7 +20,10 @@ function App() {
 
   return (
     <>
-      <NavBar user={user} setUser={setUser} />
+      <p>
+        Logged in
+      </p>
+      {/* <NavBar user={user} setUser={setUser} />
       <main>
         <Switch>
           <Route path="/new">
@@ -30,7 +33,7 @@ function App() {
             <RecipeList />
           </Route>
         </Switch>
-      </main>
+      </main> */}
     </>
   );
 }
