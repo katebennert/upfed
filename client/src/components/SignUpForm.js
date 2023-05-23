@@ -5,6 +5,7 @@ function SignUpForm({ onLogin }) {
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [imageUrl, setImageUrl] = useState("");
+  const [location, setLocation] = useState("");
   const [bio, setBio] = useState("");
   const [errors, setErrors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -24,9 +25,11 @@ function SignUpForm({ onLogin }) {
         password_confirmation: passwordConfirmation,
         image_url: imageUrl,
         bio,
+        location
       }),
     }).then((r) => {
       setIsLoading(false);
+      console.log(r)
       if (r.ok) {
         r.json().then((user) => onLogin(user));
       } else {
@@ -84,6 +87,15 @@ function SignUpForm({ onLogin }) {
           id="bio"
           value={bio}
           onChange={(e) => setBio(e.target.value)}
+        />
+      </div>
+      <div>
+        <label htmlFor="location">Location</label>
+        <input
+          type="text"
+          id="location"
+          value={location}
+          onChange={(e) => setLocation(e.target.value)}
         />
       </div>
       <div>

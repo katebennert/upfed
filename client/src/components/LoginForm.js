@@ -17,7 +17,6 @@ function LoginForm({ onLogin }) {
       body: JSON.stringify({ username, password }),
     }).then((r) => {
       setIsLoading(false);
-      console.log(r)
       if (r.ok) {
         r.json().then((user) => onLogin(user));
       } else {

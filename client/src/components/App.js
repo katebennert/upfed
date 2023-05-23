@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import NavBar from "./NavBar"
 // import { Switch, Route } from "react-router-dom";
 import Login from "./Login";
 // import { UserProvider } from "../context/user";
@@ -23,8 +24,8 @@ function App() {
       <p>
         Logged in
       </p>
-      {/* <NavBar user={user} setUser={setUser} />
-      <main>
+      <NavBar user={user} setUser={setUser} />
+      {/* <main>
         <Switch>
           <Route path="/new">
             <NewRecipe user={user} />

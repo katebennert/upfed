@@ -1,7 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
-import { Button } from "../styles";
+//import { Link } from "react-router-dom";
 
 function NavBar({ user, setUser }) {
   function handleLogoutClick() {
@@ -13,20 +11,20 @@ function NavBar({ user, setUser }) {
   }
 
   return (
-    <Wrapper>
+    <div>
         <h1> NAV </h1>
       {/* <Logo>
         <Link to="/">Reciplease</Link>
       </Logo> */}
-      <Nav>
+      <div>
         {/* <Button as={Link} to="/new">
           New Recipe
         </Button> */}
-        <Button variant="outline" onClick={handleLogoutClick}>
+        <button onClick={handleLogoutClick}>
           Logout
-        </Button>
-      </Nav>
-    </Wrapper>
+        </button>
+      </div>
+    </div>
   );
 }
 
