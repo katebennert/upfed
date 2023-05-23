@@ -33,7 +33,6 @@ function SignUpForm() {
       }),
     }).then((r) => {
       setIsLoading(false);
-      console.log(r)
       if (r.ok) {
         r.json().then((u) => setUser(u));
       } else {
