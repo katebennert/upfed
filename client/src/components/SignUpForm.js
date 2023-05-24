@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { UserContext } from "../context/user";
+import { Button } from "../styles";
 
 function SignUpForm() {
   const [username, setUsername] = useState("");
@@ -102,7 +103,7 @@ function SignUpForm() {
         />
       </div>
       <div>
-        <button type="submit">{isLoading ? "Loading..." : "Sign Up"}</button>
+        <Button type="submit">{isLoading ? "Loading..." : "Sign Up"}</Button>
       </div>
       <div>
         {errors.map((err) => (
