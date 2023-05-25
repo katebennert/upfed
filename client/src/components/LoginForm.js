@@ -31,9 +31,12 @@ function LoginForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <>
+    <h2>Login to make a trade!</h2>
+    <form className="login-form" onSubmit={handleSubmit}>
+      <div className="input-box"> 
       <div>
-        <label htmlFor="username">Username</label>
+        <label htmlFor="username">Username: </label>
         <input
           type="text"
           id="username"
@@ -43,7 +46,7 @@ function LoginForm() {
         />
       </div>
       <div>
-        <label htmlFor="password">Password</label>
+        <label htmlFor="password">Password: </label>
         <input
           type="password"
           id="password"
@@ -52,8 +55,9 @@ function LoginForm() {
           onChange={(e) => setPassword(e.target.value)}
         />
       </div>
+      </div>
       <div>
-        <button type="submit">
+        <button className="sign-up-in-btn" type="submit">
           {isLoading ? "Loading..." : "Login"}
         </button>
       </div>
@@ -63,6 +67,7 @@ function LoginForm() {
         ))}
       </div>
     </form>
+    </>
   );
 }
 

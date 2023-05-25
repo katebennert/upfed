@@ -1,35 +1,84 @@
+/*
+* Colors:
+* paper-bag: rgb(209, 162, 104);
+* cork: background-image: url("https://i.imgur.com/OSmjGZH.jpg"); 
+* creamsicle-khaki: rgb(255, 234, 207);
+* lime:  rgb(66, 197, 66);
+*
+*/
+
 body {
-  /* background-image: url("https://i.imgur.com/OSmjGZH.jpg"); */
-  background-color: rgb(209, 162, 104);
+  background-color: rgb(255, 234, 207);
 }
 
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.logo {
+  padding-left: 5rem;
+  width: 10vw;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.welcome-container {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 40px;
+  color: rgb(66, 197, 66);
+  width: 40vw;
+  margin: 100px auto;
+  /* border: solid; */
+}
+
+.sign-up-in-container {
+  color:rgb(66, 197, 66);
+  font-size: 30px;
   display: flex;
   flex-direction: column;
+  /* justify-content: center; */
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12)
+;
+
+  min-height: 200px;
+  width: 40vw;
+  margin: 100px auto;
+  background: rgb(255, 244, 230);
+  border-radius: 10px;
+} 
+
+.login-page-flexbox {
+  display: flex;
+  flex-direction: row;
 }
 
-.App-link {
-  color: #61dafb;
+.sign-up-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.input-box {
+
+}
+
+input {
+  border-radius: 10px;
+  border-color: rgb(66, 197, 66);;
+}
+
+.sign-up-in-btn {
+  color:rgb(66, 197, 66);
+  border-radius: 10px;
+  border-color: rgb(66, 197, 66);
+  background: white;
+  font-size: 20px;
 }

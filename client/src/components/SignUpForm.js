@@ -1,6 +1,5 @@
 import React, { useState, useContext } from "react";
 import { UserContext } from "../context/user";
-import { Button } from "../styles";
 
 function SignUpForm() {
   const [username, setUsername] = useState("");
@@ -43,74 +42,86 @@ function SignUpForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="username">Username</label>
-        <input
-          type="text"
-          id="username"
-          autoComplete="off"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          id="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          autoComplete="current-password"
-        />
-      </div>
-      <div>
-        <label htmlFor="password">Password Confirmation</label>
-        <input
-          type="password"
-          id="password_confirmation"
-          value={passwordConfirmation}
-          onChange={(e) => setPasswordConfirmation(e.target.value)}
-          autoComplete="current-password"
-        />
-      </div>
-      <div>
-        <label htmlFor="imageUrl">Profile Image</label>
-        <input
-          type="text"
-          id="imageUrl"
-          value={imageUrl}
-          onChange={(e) => setImageUrl(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="bio">Bio</label>
-        <input
-          type="text"
-          rows="3"
-          id="bio"
-          value={bio}
-          onChange={(e) => setBio(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="location">Location</label>
-        <input
-          type="text"
-          id="location"
-          value={location}
-          onChange={(e) => setLocation(e.target.value)}
-        />
-      </div>
-      <div>
-        <Button type="submit">{isLoading ? "Loading..." : "Sign Up"}</Button>
-      </div>
-      <div>
-        {errors.map((err) => (
+    <>
+      <h2>Sign up to make a trade!</h2>
+      <form className="sign-up-form" onSubmit={handleSubmit}>
+
+        <div>
+          <label htmlFor="username">Username: </label>
+          <input
+            type="text"
+            id="username"
+            autoComplete="off"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+        </div>
+
+        <div>
+          <label htmlFor="password">Password: </label>
+          <input
+            type="password"
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            autoComplete="current-password"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="password">Password Confirmation: </label>
+          <input
+            type="password"
+            id="password_confirmation"
+            value={passwordConfirmation}
+            onChange={(e) => setPasswordConfirmation(e.target.value)}
+            autoComplete="current-password"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="imageUrl">Profile Image: </label>
+          <input
+            type="text"
+            id="imageUrl"
+            value={imageUrl}
+            onChange={(e) => setImageUrl(e.target.value)}
+          />
+        </div>
+
+        <div>
+          <label htmlFor="bio">Bio: </label>
+          <input
+            type="text"
+            rows="3"
+            id="bio"
+            value={bio}
+            onChange={(e) => setBio(e.target.value)}
+          />
+        </div>
+
+        <div>
+          <label htmlFor="location">Location: </label>
+          <input
+            type="text"
+            id="location"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
+          />
+        </div>
+
+        <div>
+          <button className="sign-up-in-btn" type="submit">{isLoading ? "Loading..." : "Sign Up"}</button>
+        </div>
+
+        <div>
+          {errors.map((err) => (
             <p key={err}>{err}</p>
-        ))}
-      </div>
-    </form>
+          ))}
+        </div>
+
+      </form>
+    </>
   );
 }
 
