@@ -2,7 +2,7 @@ class OfferingsController < ApplicationController
 
     def index
         offerings = Offering.all 
-        render json: offerings, include: :user, status: :ok
+        render json: offerings, status: :ok
     end
 
     # def create
