@@ -1,8 +1,9 @@
 import React, { useEffect, useContext } from "react";
 import NavBar from "./NavBar"
-// import { Switch, Route } from "react-router-dom";
-import Login from "./Login";
+import { Switch, Route } from "react-router-dom";
 import { UserContext } from "../context/user";
+import Login from "./Login";
+import OfferingList from "./OfferingList";
 
 function Home() {
     const { user, setUser } = useContext(UserContext);
@@ -24,16 +25,16 @@ function Home() {
                 Hello, {user.username}!
             </p>
             <NavBar />
-            {/* <main>
+            <main>
                 <Switch>
-                <Route path="/new">
+                {/* <Route path="/new">
                     <NewRecipe user={user} />
-                </Route>
+                </Route> */}
                 <Route path="/">
-                    <RecipeList />
+                    <OfferingList />
                 </Route>
                 </Switch>
-            </main> */}
+            </main>
         </>
     )
 }
