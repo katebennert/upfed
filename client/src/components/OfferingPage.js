@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { useParams, NavLink } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import NewBid from "./NewBid";
 // import { useHistory } from "react-router-dom";
 
 function OfferingPage({ offerings }) {
 
     const { id } = useParams();
     const [currentOffering, setCurrentOffering] = useState({});
+    const [showNewBid, setShowNewBid] = useState(false);
 
     useEffect(() => {
         const offering = offerings.find(o => o.id === parseInt(id));
@@ -31,7 +33,10 @@ function OfferingPage({ offerings }) {
     return (
         <div>
             <div>{currentOffering.title}</div>
-            <NavLink to="/new-bid"><button>Request a Trade!</button></NavLink>
+            <button onClick={() => setShowNewBid(!showNewBid)} >Request a Trade!</button>
+            <div>
+                { showNewBid ? <NewBid currentOffering={currentOffering} /> : <></>}
+            </div>
         </div>
     );
 }

@@ -6,8 +6,8 @@ class OfferingsController < ApplicationController
     end
 
     def create
-        user = User.find_by(id: session[:user_id])
-        offering = user.offerings.create!(offering_params)
+        current_user = User.find_by(id: session[:user_id])
+        offering = current_user.offerings.create!(offering_params)
         render json: offering, status: :created
     end
 
