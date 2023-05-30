@@ -5,6 +5,7 @@ import { UserContext } from "../context/user";
 import Login from "./Login";
 import OfferingList from "./OfferingList";
 import OfferingPage from "./OfferingPage";
+import NewOffering from "./NewOffering";
 
 
 function Home() {
@@ -24,7 +25,11 @@ function Home() {
             r.json().then((user) => setUser(user));
           }
         });
-      }, [setUser]);
+    }, [setUser]);
+
+    function handleCreateNewOffering(newOffering) {
+        setOfferings([...offerings, newOffering]);
+    }
  
     if (!user) return <Login />;
 
@@ -39,9 +44,9 @@ function Home() {
                     <Route path="/offerings/:id">
                         <OfferingPage offerings={offerings} />
                     </Route>
-                {/* <Route path="/new">
-                    <NewRecipe user={user} />
-                </Route> */}
+                    <Route path="/new">
+                        <NewOffering offerings ={offerings} onCreateNewOffering={handleCreateNewOffering} />
+                    </Route>
                     <Route exact path="/">
                         <OfferingList offerings={offerings} />
                     </Route>

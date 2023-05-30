@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function OfferingList({ offerings }) {
 
@@ -9,6 +9,7 @@ function OfferingList({ offerings }) {
                 offerings.map((offering) => (
                     <div key={offering.id}>
                         <h3>{offering.title}</h3>
+                        <p>listed by: {offering.user.username}</p>
                         <img src={offering.image_url} alt={offering.title}/>
                         <p>Description: {offering.description}</p>
                         <p>Condition: {offering.condition}</p>
@@ -19,9 +20,7 @@ function OfferingList({ offerings }) {
             ) : (
                 <>
                     <h2>No Offerings Found</h2>
-                     <button as={Link} to="/new">
-                        Make a New Offer!
-                    </button>
+                    <NavLink to={`/new`}><button>Make a New Offering</button></NavLink>
                 </>
             )}
         </>

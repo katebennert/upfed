@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { UserContext } from "../context/user";
-//import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function NavBar() {
    const { setUser } = useContext(UserContext);
@@ -15,7 +15,7 @@ function NavBar() {
 
   return (
     <div>
-        <h1> NAV </h1>
+        <NavLink to={`/new`}><button>Create an Offering</button></NavLink>
       {/* <Logo>
         <Link to="/">Reciplease</Link>
       </Logo> */}
