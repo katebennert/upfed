@@ -20,7 +20,7 @@ function OfferingList({ offerings }) {
             ) : (
                 <>
                     <h2>No Offerings Found</h2>
-                    <NavLink to={`/new`}><button>Make a New Offering</button></NavLink>
+                    <NavLink to={`/new-offering`}><button>Make a New Offering</button></NavLink>
                 </>
             )}
         </>

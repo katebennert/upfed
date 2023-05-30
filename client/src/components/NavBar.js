@@ -15,7 +15,7 @@ function NavBar() {
 
   return (
     <div>
-        <NavLink to={`/new`}><button>Create an Offering</button></NavLink>
+        <NavLink to={`/new-offering`}><button>Create an Offering</button></NavLink>
       {/* <Logo>
         <Link to="/">Reciplease</Link>
       </Logo> */}

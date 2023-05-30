@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_26_140517) do
+ActiveRecord::Schema.define(version: 2023_05_30_182610) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bids", force: :cascade do |t|
+    t.string "title"
+    t.string "image_url"
+    t.text "description"
+    t.string "condition"
+    t.string "category_tag"
+    t.text "message"
+    t.bigint "user_id", null: false
+    t.bigint "offering_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["offering_id"], name: "index_bids_on_offering_id"
+    t.index ["user_id"], name: "index_bids_on_user_id"
+  end
 
   create_table "offerings", force: :cascade do |t|
     t.string "title"
@@ -37,5 +52,7 @@ ActiveRecord::Schema.define(version: 2023_05_26_140517) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "bids", "offerings"
+  add_foreign_key "bids", "users"
   add_foreign_key "offerings", "users"
 end

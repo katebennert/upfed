@@ -44,8 +44,11 @@ function Home() {
                     <Route path="/offerings/:id">
                         <OfferingPage offerings={offerings} />
                     </Route>
-                    <Route path="/new">
+                    <Route path="/new-offering">
                         <NewOffering offerings ={offerings} onCreateNewOffering={handleCreateNewOffering} />
+                    </Route>
+                    <Route path="/new-bid">
+                        <NewBid />
                     </Route>
                     <Route exact path="/">
                         <OfferingList offerings={offerings} />

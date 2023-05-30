@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, NavLink } from "react-router-dom";
 // import { useHistory } from "react-router-dom";
 
 function OfferingPage({ offerings }) {
@@ -31,6 +31,7 @@ function OfferingPage({ offerings }) {
     return (
         <div>
             <div>{currentOffering.title}</div>
+            <NavLink to="/new-bid"><button>Request a Trade!</button></NavLink>
         </div>
     );
 }
