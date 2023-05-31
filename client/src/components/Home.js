@@ -30,6 +30,8 @@ function Home() {
     function handleCreateNewOffering(newOffering) {
         setOfferings([...offerings, newOffering]);
     }
+
+    console.log(offerings)
  
     if (!user) return <Login />;
 

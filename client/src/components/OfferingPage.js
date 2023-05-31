@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import NewBid from "./NewBid";
+import { UserContext } from "../context/user";
 // import { useHistory } from "react-router-dom";
 
 function OfferingPage({ offerings }) {
-
+    const { user, setUser } = useContext(UserContext);
     const { id } = useParams();
     const [currentOffering, setCurrentOffering] = useState(null);
     const [showNewBid, setShowNewBid] = useState(false);
@@ -17,6 +18,10 @@ function OfferingPage({ offerings }) {
     function handleSubmitNewBid(newBid) {
         setCurrentOffering({...currentOffering, bids: [...currentOffering.bids, newBid]})
         setShowNewBid(!showNewBid);
+    }
+
+    function handleViewBidClick(e) {
+        console.log(e.target.value)
     }
 
     // const history = useHistory();
@@ -33,16 +38,30 @@ function OfferingPage({ offerings }) {
     //         })
     // }
 
+    console.log(currentOffering)
+
     return (
         <div>
             <div>{currentOffering ? currentOffering.title : ""}</div>
             <div>{currentOffering ? currentOffering.bids.map((bid) => (
-                    <p key={bid.id}>{bid.title}</p>)) : <></>
+                    <div key={bid.id}>
+                        <p>{bid.title}</p>
+                        <p>{bid.user}</p>
+                        {true ? 
+                            <div>
+                                <button value={bid.id} onClick={handleViewBidClick} >Edit Bid</button>
+                                <button value={bid.id} onClick={handleViewBidClick} >Delete Bid</button>
+                            </div> 
+                        :
+                            <></>
+                        }
+                    </div>
+                    )) : <></>
                 }
             </div>
             <button onClick={() => setShowNewBid(!showNewBid)} >Request a Trade!</button>
             <div>
-                { showNewBid ? <NewBid currentOffering={currentOffering}  onSubmitNewBid={handleSubmitNewBid}/> : <></>}
+                { showNewBid ? <NewBid currentOffering={currentOffering} onSubmitNewBid={handleSubmitNewBid}/> : <></>}
             </div>
         </div>
     );
