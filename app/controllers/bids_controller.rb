@@ -14,9 +14,23 @@ class BidsController < ApplicationController
         render json: bid, status: :created
     end
 
+    def destroy
+        current_user = User.find_by(id: session[:user_id])
+        bid = current_user.bids.find_by(id: params[:id])
+        bid.destroy
+        head :no_content
+    end
+
+    def update
+        current_user = User.find_by(id: session[:user_id])
+        bid = current_user.bids.find_by(id: params[:id])
+        bid.update!(bid_params)
+        render json: bid, status: :accepted
+    end
+
     private
 
     def bid_params
-        params.permit(:title, :description, :image_url, :condition, :category_tag, :message, :offering_id)
+        params.permit(:title, :description, :image_url, :condition, :category_tag, :message)
     end
 end

@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
-import { useParams } from "react-router-dom";
 import NewBid from "./NewBid";
+import Bid from "./Bid";
 import { UserContext } from "../context/user";
-// import { useHistory } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 function OfferingPage({ offerings }) {
-    const { user, setUser } = useContext(UserContext);
+    const { user } = useContext(UserContext);
     const { id } = useParams();
     const [currentOffering, setCurrentOffering] = useState(null);
     const [showNewBid, setShowNewBid] = useState(false);
@@ -20,43 +20,19 @@ function OfferingPage({ offerings }) {
         setShowNewBid(!showNewBid);
     }
 
-    function handleViewBidClick(e) {
-        console.log(e.target.value)
+    function handleDeleteClick(e) {
+        const bidId = parseInt(e.target.value);
+        const filteredBids = currentOffering.bids.filter(bid => bid.id !== bidId)
+        fetch(`/bids/${bidId}`, {
+          method: "DELETE",
+        })
+        .then(setCurrentOffering({...currentOffering, bids: filteredBids}))
     }
-
-    // const history = useHistory();
-
-
-    // const handleDeleteClick = () => {
-    //     fetch(`http://localhost:9292/jobs/${id}`, {
-    //       method: "DELETE",
-    //     })
-    //         .then(r => r.json())
-    //         .then(deletedJob => {
-    //             onDeleteJob(deletedJob, job.freelancers);
-    //             history.push("/jobs");
-    //         })
-    // }
 
     return (
         <div>
             <div>{currentOffering ? currentOffering.title : ""}</div>
-            <div>{currentOffering ? currentOffering.bids.map((bid) => (
-                    <div key={bid.id}>
-                        <p>{bid.title}</p>
-                        <p>{bid.user.username}</p>
-                        {bid.user.id === user.id ? 
-                            <div>
-                                <button value={bid.id} onClick={handleViewBidClick} >Edit Bid</button>
-                                <button value={bid.id} onClick={handleViewBidClick} >Delete Bid</button>
-                            </div> 
-                        :
-                            <></>
-                        }
-                    </div>
-                    )) : <></>
-                }
-            </div>
+            <Bid currentOffering={currentOffering} onDeleteClick={handleDeleteClick}/>
             <button onClick={() => setShowNewBid(!showNewBid)} >Request a Trade!</button>
             <div>
                 { showNewBid ? <NewBid currentOffering={currentOffering} onSubmitNewBid={handleSubmitNewBid}/> : <></>}

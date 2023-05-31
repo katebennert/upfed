@@ -1,5 +1,5 @@
 class BidSerializer < ActiveModel::Serializer
   attributes :id, :title, :description, :image_url, :description, :condition, :category_tag, :message
-  belongs_to :user
-  belongs_to :offering
+  has_one :user
+  has_one :offering
 end
