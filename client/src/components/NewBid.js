@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function NewBid({ currentOffering }) {
+function NewBid({ currentOffering, onSubmitNewBid }) {
    
     const [newBid, setNewBid] = useState({
         title: "",
@@ -13,7 +13,6 @@ function NewBid({ currentOffering }) {
     });
     const [errors, setErrors] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
-    const [bids, setBids] = useState(currentOffering.bids); 
 
     function handleChange(e) {
         const name = e.target.id;
@@ -41,14 +40,12 @@ function NewBid({ currentOffering }) {
         }).then((r) => {
             setIsLoading(false);
             if (r.ok) {
-                r.json().then(setBids);
+                r.json().then((bidData) => onSubmitNewBid(bidData));
             } else {
                 r.json().then((err) => setErrors(err.errors));
             }
         });
     }
-
-    console.log(bids)
 
   return (
     <div>

@@ -6,13 +6,18 @@ import NewBid from "./NewBid";
 function OfferingPage({ offerings }) {
 
     const { id } = useParams();
-    const [currentOffering, setCurrentOffering] = useState({});
+    const [currentOffering, setCurrentOffering] = useState(null);
     const [showNewBid, setShowNewBid] = useState(false);
 
     useEffect(() => {
         const offering = offerings.find(o => o.id === parseInt(id));
-        setCurrentOffering(offering)
+        setCurrentOffering(offering);
     }, [id, offerings]);
+
+    function handleSubmitNewBid(newBid) {
+        setCurrentOffering({...currentOffering, bids: [...currentOffering.bids, newBid]})
+        setShowNewBid(!showNewBid);
+    }
 
     // const history = useHistory();
 
@@ -28,14 +33,16 @@ function OfferingPage({ offerings }) {
     //         })
     // }
 
-
-
     return (
         <div>
-            <div>{currentOffering.title}</div>
+            <div>{currentOffering ? currentOffering.title : ""}</div>
+            <div>{currentOffering ? currentOffering.bids.map((bid) => (
+                    <p key={bid.id}>{bid.title}</p>)) : <></>
+                }
+            </div>
             <button onClick={() => setShowNewBid(!showNewBid)} >Request a Trade!</button>
             <div>
-                { showNewBid ? <NewBid currentOffering={currentOffering} /> : <></>}
+                { showNewBid ? <NewBid currentOffering={currentOffering}  onSubmitNewBid={handleSubmitNewBid}/> : <></>}
             </div>
         </div>
     );
