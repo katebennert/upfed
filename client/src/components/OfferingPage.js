@@ -38,16 +38,14 @@ function OfferingPage({ offerings }) {
     //         })
     // }
 
-    console.log(currentOffering)
-
     return (
         <div>
             <div>{currentOffering ? currentOffering.title : ""}</div>
             <div>{currentOffering ? currentOffering.bids.map((bid) => (
                     <div key={bid.id}>
                         <p>{bid.title}</p>
-                        <p>{bid.user}</p>
-                        {true ? 
+                        <p>{bid.user.username}</p>
+                        {bid.user.id === user.id ? 
                             <div>
                                 <button value={bid.id} onClick={handleViewBidClick} >Edit Bid</button>
                                 <button value={bid.id} onClick={handleViewBidClick} >Delete Bid</button>

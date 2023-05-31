@@ -6,6 +6,7 @@ import Login from "./Login";
 import OfferingList from "./OfferingList";
 import OfferingPage from "./OfferingPage";
 import NewOffering from "./NewOffering";
+import Landing from "./Landing";
 
 
 function Home() {
@@ -30,8 +31,6 @@ function Home() {
     function handleCreateNewOffering(newOffering) {
         setOfferings([...offerings, newOffering]);
     }
-
-    console.log(offerings)
  
     if (!user) return <Login />;
 
@@ -49,8 +48,11 @@ function Home() {
                     <Route path="/new-offering">
                         <NewOffering offerings ={offerings} onCreateNewOffering={handleCreateNewOffering} />
                     </Route>
-                    <Route exact path="/">
+                    <Route path="/offerings">
                         <OfferingList offerings={offerings} />
+                    </Route>
+                    <Route exact path="/">
+                        <Landing />
                     </Route>
                 </Switch>
             </main>
