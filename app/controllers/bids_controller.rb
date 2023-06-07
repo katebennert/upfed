@@ -7,7 +7,6 @@ class BidsController < ApplicationController
 
     def create
         offering = Offering.find_by(id: params[:offering_id])
-        current_user = User.find_by(id: session[:user_id])
         bid = offering.bids.new(bid_params)
         current_user.bids << bid
         bid.save!

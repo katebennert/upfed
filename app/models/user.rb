@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-    has_many :offerings
     has_many :bids
     has_many :offerings, through: :bids
 

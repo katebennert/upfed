@@ -6,16 +6,16 @@ class OfferingsController < ApplicationController
     end
 
     def create
-        current_user = User.find_by(id: session[:user_id])
-       #byebug
+        puts current_user.id
         offering = current_user.offerings.create!(offering_params)
+        # current user returns the correct user in the console but for some reason throws an error that it does not exist and if i remove the exception, the user info will populate with nil
         render json: offering, status: :created
     end
 
     private
 
     def offering_params
-        params.permit(:title, :description, :image_url, :condition, :category_tag)
+        params.require(:offering).permit(:title, :description, :image_url, :condition, :category_tag).merge(user_id: current_user.id)
     end
 
 end

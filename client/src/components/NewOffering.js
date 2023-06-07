@@ -40,6 +40,7 @@ function NewOffering({ onCreateNewOffering }) {
             body: JSON.stringify(newOffering),
         }).then((r) => {
             setIsLoading(false);
+            console.log(newOffering)
             console.log(r)
             if (r.ok) {
                 r.json().then(newOfferingData => {
@@ -107,12 +108,12 @@ function NewOffering({ onCreateNewOffering }) {
               {isLoading ? "Loading..." : "Submit Offering"}
             </button>
           </div>
+          </form>
           <div>
             {errors.map((err) => (
               <p key={err}>{err}</p>
             ))}
           </div>
-         </form>
 
       </div>
     </div>

@@ -29,6 +29,8 @@ function OfferingPage({ offerings }) {
         .then(setCurrentOffering({...currentOffering, bids: filteredBids}))
     }
 
+    console.log(currentOffering)
+
     return (
         <div>
             <div>{currentOffering ? currentOffering.title : ""}</div>
