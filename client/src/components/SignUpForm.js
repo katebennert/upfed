@@ -43,11 +43,11 @@ function SignUpForm() {
 
   return (
     <>
-      <h2>Sign up to make a trade!</h2>
+      <h2>Sign up for UpFed</h2>
       <form className="sign-up-form" onSubmit={handleSubmit}>
 
-        <div>
-          <label htmlFor="username">Username: </label>
+        <div className="form-group">
+          <label htmlFor="username">Username </label>
           <input
             type="text"
             id="username"
@@ -57,8 +57,8 @@ function SignUpForm() {
           />
         </div>
 
-        <div>
-          <label htmlFor="password">Password: </label>
+        <div className="form-group">
+          <label htmlFor="password">Password </label>
           <input
             type="password"
             id="password"
@@ -68,8 +68,8 @@ function SignUpForm() {
           />
         </div>
 
-        <div>
-          <label htmlFor="password">Password Confirmation: </label>
+        <div className="form-group">
+          <label htmlFor="password">Password Confirmation </label>
           <input
             type="password"
             id="password_confirmation"
@@ -79,8 +79,8 @@ function SignUpForm() {
           />
         </div>
 
-        <div>
-          <label htmlFor="imageUrl">Profile Image: </label>
+        <div className="form-group">
+          <label htmlFor="imageUrl">Profile Image </label>
           <input
             type="text"
             id="imageUrl"
@@ -89,8 +89,8 @@ function SignUpForm() {
           />
         </div>
 
-        <div>
-          <label htmlFor="bio">Bio: </label>
+        <div className="form-group">
+          <label htmlFor="bio">Write a quick bio </label>
           <input
             type="text"
             rows="3"
@@ -100,8 +100,8 @@ function SignUpForm() {
           />
         </div>
 
-        <div>
-          <label htmlFor="location">Location: </label>
+        <div className="form-group">
+          <label htmlFor="location">Location </label>
           <input
             type="text"
             id="location"

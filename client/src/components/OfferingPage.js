@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import NewBid from "./NewBid";
 import Bid from "./Bid";
-import { UserContext } from "../context/user";
+//import { UserContext } from "../context/user";
 import { useParams } from "react-router-dom";
 
 function OfferingPage({ offerings }) {
-    const { user } = useContext(UserContext);
+    //const { user } = useContext(UserContext);
     const { id } = useParams();
     const [currentOffering, setCurrentOffering] = useState(null);
     const [showNewBid, setShowNewBid] = useState(false);
@@ -29,16 +29,19 @@ function OfferingPage({ offerings }) {
         .then(setCurrentOffering({...currentOffering, bids: filteredBids}))
     }
 
-    console.log(currentOffering)
-
     return (
         <div>
-            <div>{currentOffering ? currentOffering.title : ""}</div>
-            <Bid currentOffering={currentOffering} onDeleteClick={handleDeleteClick}/>
-            <button onClick={() => setShowNewBid(!showNewBid)} >Request a Trade!</button>
-            <div>
-                { showNewBid ? <NewBid currentOffering={currentOffering} onSubmitNewBid={handleSubmitNewBid}/> : <></>}
-            </div>
+            {currentOffering ? 
+            <>
+                <div> {currentOffering.title} </div>
+                <Bid currentOffering={currentOffering} onDeleteClick={handleDeleteClick}/>
+                <button onClick={() => setShowNewBid(!showNewBid)} >Request a Trade!</button>
+                <div>
+                    {showNewBid ? <NewBid currentOffering={currentOffering} onSubmitNewBid={handleSubmitNewBid}/> : <></>}
+                </div>
+            </>
+            : "Oops! This offering doesn't exist (yet)."
+            }
         </div>
     );
 }

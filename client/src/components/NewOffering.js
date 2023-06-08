@@ -45,7 +45,7 @@ function NewOffering({ onCreateNewOffering }) {
             if (r.ok) {
                 r.json().then(newOfferingData => {
                     onCreateNewOffering(newOfferingData)
-                    history.push("/")
+                    history.push("/offerings")
             });
             } else {
                 r.json().then((err) => setErrors(err.errors));

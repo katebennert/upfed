@@ -32,11 +32,11 @@ function LoginForm() {
 
   return (
     <>
-    <h2>Login to make a trade!</h2>
+    <h2>Log in</h2>
     <form className="login-form" onSubmit={handleSubmit}>
       <div className="input-box"> 
-      <div>
-        <label htmlFor="username">Username: </label>
+      <div className="form-group">
+        <label htmlFor="username">Username </label>
         <input
           type="text"
           id="username"
@@ -45,8 +45,8 @@ function LoginForm() {
           onChange={(e) => setUsername(e.target.value)}
         />
       </div>
-      <div>
-        <label htmlFor="password">Password: </label>
+      <div className="form-group">
+        <label htmlFor="password">Password </label>
         <input
           type="password"
           id="password"

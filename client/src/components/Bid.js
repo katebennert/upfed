@@ -14,7 +14,7 @@ function Bid({ currentOffering, onUpdateClick, onDeleteClick }) {
 
 return (
     <>{isUpdating ? <UpdateBid currentBid={currentBid} /> :
-    <div>{(currentOffering && currentOffering.bids) ? currentOffering.bids.map((bid) => (
+    <div>{(currentOffering && currentOffering.bids !== []) ? currentOffering.bids.map((bid) => (
         <div key={bid.id}>
             <p>{bid.title}</p>
             <p>{bid.user.username}</p>

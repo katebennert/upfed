@@ -6,4 +6,6 @@ class FallbackController < ActionController::Base
     # React app index page
     render file: 'public/index.html'
   end
+
+  #idk what this error is but there is an error here
 end

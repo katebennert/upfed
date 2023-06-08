@@ -6,16 +6,15 @@ class OfferingsController < ApplicationController
     end
 
     def create
-        puts current_user.id
         offering = current_user.offerings.create!(offering_params)
-        # current user returns the correct user in the console but for some reason throws an error that it does not exist and if i remove the exception, the user info will populate with nil
         render json: offering, status: :created
+        #why is my offering initializing with an empty bid?? i manually set to an empty array for now. the bandaid doesnt work
     end
 
     private
 
     def offering_params
-        params.require(:offering).permit(:title, :description, :image_url, :condition, :category_tag).merge(user_id: current_user.id)
+        params.permit(:title, :description, :image_url, :condition, :category_tag).merge(user_id: current_user.id)
     end
 
 end

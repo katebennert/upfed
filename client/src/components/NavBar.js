@@ -15,18 +15,13 @@ function NavBar() {
 
   return (
     <div>
+        <NavLink to={`/`}><button>Home</button></NavLink>
         <NavLink to={`/new-offering`}><button>Create an Offering</button></NavLink>
-      {/* <Logo>
-        <Link to="/">Reciplease</Link>
-      </Logo> */}
-      <div>
-        {/* <Button as={Link} to="/new">
-          New Recipe
-        </Button> */}
+        <NavLink to={`/offerings`}><button>View Offerings</button></NavLink>
         <button onClick={handleLogoutClick}>
           Logout
         </button>
-      </div>
+      
     </div>
   );
 }
