@@ -30,7 +30,6 @@ function NewOffering({ onCreateNewOffering }) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(newOffering)
         setIsLoading(true);
         fetch("/offerings", {
             method: "POST",
@@ -40,8 +39,6 @@ function NewOffering({ onCreateNewOffering }) {
             body: JSON.stringify(newOffering),
         }).then((r) => {
             setIsLoading(false);
-            console.log(newOffering)
-            console.log(r)
             if (r.ok) {
                 r.json().then(newOfferingData => {
                     onCreateNewOffering(newOfferingData)
