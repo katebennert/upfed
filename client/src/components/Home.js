@@ -36,9 +36,6 @@ function Home() {
 
     return (
         <>
-            <p>
-                Hello, {user.username}!
-            </p>
             <NavBar />
             <main>
                 <Switch>

@@ -3,7 +3,7 @@ import { UserContext } from "../context/user";
 import { NavLink } from "react-router-dom";
 
 function NavBar() {
-   const { setUser } = useContext(UserContext);
+   const { user, setUser } = useContext(UserContext);
 
   function handleLogoutClick() {
     fetch("/logout", { method: "DELETE" }).then((r) => {
@@ -15,9 +15,10 @@ function NavBar() {
 
   return (
     <div>
+        Hello, {user.username}!
         <NavLink to={`/`}><button>Home</button></NavLink>
-        <NavLink to={`/new-offering`}><button>Create an Offering</button></NavLink>
         <NavLink to={`/offerings`}><button>View Offerings</button></NavLink>
+        <NavLink to={`/new-offering`}><button>Create an Offering</button></NavLink>
         <button onClick={handleLogoutClick}>
           Logout
         </button>
