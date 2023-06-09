@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { UserContext } from "../context/user";
+import { useHistory } from "react-router";
 
 function SignUpForm() {
   const [username, setUsername] = useState("");
@@ -12,7 +13,7 @@ function SignUpForm() {
   const [isLoading, setIsLoading] = useState(false);
 
   const { setUser } = useContext(UserContext);
-
+  const history = useHistory();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -35,6 +36,7 @@ function SignUpForm() {
       setIsLoading(false);
       if (r.ok) {
         r.json().then((u) => setUser(u));
+        history.push("/");
       } else {
         r.json().then((err) => setErrors(err.errors));
       }
