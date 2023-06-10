@@ -95,6 +95,14 @@ input[type="password"] {
   color: rgb(66, 197, 66);
 }
 
+.errors-container {
+  background-color: rgba(255, 0, 0, 0.5);
+  border-radius: 5px;
+  width: 80%;
+  color: #fff;
+  padding-left: 5px;
+}
+
 .sign-up-login-switch {
   color:rgb(66, 197, 66);
 }

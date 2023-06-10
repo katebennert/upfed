@@ -44,10 +44,9 @@ function SignUpForm() {
   }
 
   return (
-    <>
+    <div className="sign-up-container">
       <h2>Sign up for UpFed</h2>
       <form className="sign-up-form" onSubmit={handleSubmit}>
-
         <div className="form-group">
           <label htmlFor="username">Username </label>
           <input
@@ -116,14 +115,14 @@ function SignUpForm() {
           <button className="sign-up-in-btn" type="submit">{isLoading ? "Loading..." : "Sign Up"}</button>
         </div>
 
-        <div>
+        <div className="errors-container">
           {errors.map((err) => (
             <p key={err}>{err}</p>
           ))}
         </div>
 
       </form>
-    </>
+    </div>
   );
 }
 

@@ -60,7 +60,7 @@ function LoginForm() {
             {isLoading ? "Loading..." : "Login"}
           </button>
         </div>
-        <div className="error-container">
+        <div className="errors-container">
           {errors.map((err) => (
             <p key={err}>{err}</p>
           ))}
