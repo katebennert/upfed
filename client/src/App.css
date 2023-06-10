@@ -176,3 +176,63 @@ input[type="password"] {
   background-color: rgb(66, 197, 66);
   color: #f2f2f2;
 }
+
+/*OFFERING CARDS*/
+
+.offering-card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); 
+  grid-gap: 30px; 
+  max-width: 80%; /* Set the maximum width based on the desired maximum columns */
+  margin: 0 auto; /* Center the grid horizontally */
+}
+
+.offering-card {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  padding: 20px;
+  border: solid;
+  border-color:rgb(66, 197, 66);
+  margin: 10px;
+}
+
+.offering-info {
+  text-align: center;
+}
+
+/* @media (max-width: 768px) {
+  .offering-card {
+    grid-template-columns: repeat(auto-fit, minmax(250px));
+  }
+} */
+
+.offering-card img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.offering-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.offering-description {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.offering-condition,
+.offering-category-tag {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 5px;
+}
