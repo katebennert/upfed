@@ -14,16 +14,17 @@ function NavBar() {
   }
 
   return (
-    <div>
-        Hello, {user.username}!
-        <NavLink to={`/`}><button>Home</button></NavLink>
-        <NavLink to={`/offerings`}><button>View Offerings</button></NavLink>
-        <NavLink to={`/new-offering`}><button>Create an Offering</button></NavLink>
-        <button onClick={handleLogoutClick}>
-          Logout
-        </button>
-      
-    </div>
+    <nav className="navbar">
+      <div className="left-section">
+        <NavLink to={`/`}><img className="home-link-logo" src="https://i.imgur.com/pDinA3g.png" alt="UpFed Logo" /></NavLink>
+        <span className="greeting">Hello, {user.username}!</span>
+      </div>
+        <ul className="nav-links">
+          <li><NavLink to={`/offerings`} className="nav-link">View Offerings</NavLink></li>
+          <li><NavLink to={`/new-offering`} className="nav-link">Create an Offering</NavLink></li>
+          <li><button onClick={handleLogoutClick} className="logout-button">Logout</button></li>
+        </ul>
+    </nav>
   );
 }
 

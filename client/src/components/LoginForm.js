@@ -33,43 +33,41 @@ function LoginForm() {
   }
 
   return (
-    <>
-    <h2>Log in</h2>
-    <form className="login-form" onSubmit={handleSubmit}>
-      <div className="input-box"> 
-      <div className="form-group">
-        <label htmlFor="username">Username </label>
-        <input
-          type="text"
-          id="username"
-          autoComplete="off"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
+    <div className="login-container">
+      <h2>Login</h2>
+      <form className="login-form" onSubmit={handleSubmit}> 
+        <div className="form-group">
+          <label htmlFor="username">Username </label>
+          <input
+            type="text"
+            id="username"
+            autoComplete="off"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
         />
-      </div>
-      <div className="form-group">
-        <label htmlFor="password">Password </label>
-        <input
-          type="password"
-          id="password"
-          autoComplete="current-password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </div>
-      </div>
-      <div>
-        <button className="sign-up-in-btn" type="submit">
-          {isLoading ? "Loading..." : "Login"}
-        </button>
-      </div>
-      <div>
-      {errors.map((err) => (
-          <p key={err}>{err}</p>
-        ))}
+        <div className="form-group">
+          <label htmlFor="password">Password </label>
+          <input
+            type="password"
+            id="password"
+            autoComplete="current-password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        <div>
+          <button className="sign-up-in-btn" type="submit">
+            {isLoading ? "Loading..." : "Login"}
+          </button>
+        </div>
+        <div className="error-container">
+          {errors.map((err) => (
+            <p key={err}>{err}</p>
+          ))}
+        </div>
       </div>
     </form>
-    </>
+  </div>
   );
 }
 

@@ -10,32 +10,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
 
 body {
-  background-color: rgb(249, 246, 242);
+  background-color: whitesmoke;
 }
+
+/*LOGIN/SIGNUP PAGE*/
 
 .logo {
   padding-left: 1rem;
   width: 10vw;
 }
 
-.welcome-container {
-  font-family: 'Prata', serif;
-  font-size: 40px;
-  color: rgb(66, 197, 66);
-  width: 40vw;
-  margin: 100px auto;
+.login-page-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
-.sign-up-in-container {
+.sign-in-forms-container {
+  min-height: 200px;
+  margin: 10px 50px;
   font-family: 'Prata', serif;
   color:rgb(66, 197, 66);
-  font-size: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  min-height: 200px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
   width: 30vw;
-  margin: 100px auto;
   background: white;
   border-style: solid;
   border-color: rgb(66, 197, 66);
@@ -44,52 +43,128 @@ body {
   padding-left: 3rem;
 } 
 
+.welcome-container {
+  font-family: 'Prata', serif;
+  font-size: 40px;
+  color: rgb(66, 197, 66);
+  width: 40vw;
+}
+
+h2 {
+  text-align: center;
+}
+
 .form-group {
-  margin-bottom: 15px;
-  display: flex;
-  flex-direction: column;
-  height: 30px; 
+  margin-bottom: 20px;
 }
 
-.login-page-flexbox {
-  display: flex;
-  flex-direction: row;
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
-.sign-up-form {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1rem;
-  font-weight: 200;
-  color: rgb(20, 20, 20);
-  display: flex;
-  flex-direction: column;
+input[type="text"],
+input[type="password"] {
   width: 80%;
-}
-
-.login-form {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1rem;
-  color: rgb(20, 20, 20);
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-}
-
-input {
-  border-radius: 3px;
-  border-color: rgb(20, 20, 20);
-  border-width: 1px;
-  flex: 1;
-  width: 100%;
-  height: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 .sign-up-in-btn {
-  color:  rgb(249, 246, 242);
-  border-radius: 20px;
+  display: block;
+  width: 40%;
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(66, 197, 66);
+  color: #fff;
+  border-color:rgb(66, 197, 66);
   border-width: 1px;
-  border-color: rgb(249, 246, 242);;
-  background: rgb(66, 197, 66);
-  font-size: 20px;
-  height: 100%;
+  border-radius: 5px;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.sign-up-in-btn:hover {
+  border: solid;
+  box-shadow: none;
+  border-color:rgb(66, 197, 66);
+  border-width: 1px;
+  background-color: #fff;
+  color: rgb(66, 197, 66);
+}
+
+.sign-up-login-switch {
+  color:rgb(66, 197, 66);
+}
+
+.sign-up-login-switch:hover {
+  color:hotpink;
+  cursor: pointer;
+}
+
+/*NAVBAR*/
+
+.navbar {
+  font-family: 'Prata', serif;
+  color: rgb(66, 197, 66);
+  font-size: large;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f2f2f2;
+  padding: 5px;
+  border-bottom: solid;
+  border-color: rgb(66, 197, 66);
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+}
+
+.greeting {
+  color: hotpink;
+  padding-left: 10px;
+}
+
+.home-link-logo {
+  width: 10vw;
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 30px;
+}
+
+.nav-link {
+  color: rgb(66, 197, 66);
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.logout-button {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 10px;
+  color:  rgb(66, 197, 66);
+  height: auto;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: rgb(66, 197, 66);
+}
+
+.logout-button:hover {
+  background-color: rgb(66, 197, 66);
+  color: #f2f2f2;
 }

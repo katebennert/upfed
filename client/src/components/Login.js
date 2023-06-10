@@ -9,16 +9,16 @@ function Login() {
   return (
     <>
         <img className="logo" src="https://i.imgur.com/pDinA3g.png" alt="UpFed Logo" />
-        <div className="login-page-flexbox">
-            <div className="sign-up-in-container">
+        <div className="login-page-container">
+            <div className="sign-in-forms-container">
                 {showSignUp ? (
                     <>
                         <SignUpForm />
                     <p>
                         Already have an account? &nbsp;
-                        <button className="sign-up-in-btn" onClick={() => setShowSignUp(false)}>
-                            Log in 
-                        </button>
+                        <span className="sign-up-login-switch" onClick={() => setShowSignUp(false)}>
+                            Login here.
+                        </span>
                     </p>
                 </>
             ) : (
@@ -26,9 +26,9 @@ function Login() {
                     <LoginForm />
                     <p>
                         Need an UpFed account? &nbsp;
-                        <button className="sign-up-in-btn" onClick={() => setShowSignUp(true)}>
-                            Sign Up
-                        </button>
+                        <span className="sign-up-login-switch" onClick={() => setShowSignUp(true)}>
+                            Sign up here.
+                        </span>
                     </p>
                 </>
             )}
