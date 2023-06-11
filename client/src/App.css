@@ -23,13 +23,13 @@ body {
 .login-page-container {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  padding: 40px;
 }
 
 .sign-in-forms-container {
   min-height: 200px;
-  margin: 10px 50px;
   font-family: 'Prata', serif;
   color:rgb(66, 197, 66);
   background-color: #f2f2f2;
@@ -121,8 +121,8 @@ input[type="password"] {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #f2f2f2;
-  padding: 5px;
+  background-color: #d9ff0051;
+  padding-top: 5px;
   border-bottom: solid;
   border-color: rgb(66, 197, 66);
 }
@@ -161,20 +161,15 @@ input[type="password"] {
   text-decoration: underline;
 }
 
-.logout-button {
-  font-family: Arial, Helvetica, sans-serif;
-  padding: 10px;
+.logout-span {
+  padding-right: 10px;
+  font-size: 12px;
   color:  rgb(66, 197, 66);
-  height: auto;
-  background-color: #f2f2f2;
-  border-radius: 5px;
-  border-width: 1px;
-  border-color: rgb(66, 197, 66);
 }
 
-.logout-button:hover {
-  background-color: rgb(66, 197, 66);
-  color: #f2f2f2;
+.logout-span:hover {
+  color: black;
+  cursor: pointer;
 }
 
 /*OFFERING CARDS*/
@@ -183,8 +178,8 @@ input[type="password"] {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); 
   grid-gap: 30px; 
-  max-width: 80%; /* Set the maximum width based on the desired maximum columns */
-  margin: 0 auto; /* Center the grid horizontally */
+  max-width: 80%; 
+  margin: 0 auto; 
 }
 
 .offering-card {
@@ -192,7 +187,7 @@ input[type="password"] {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
   background-color: #f2f2f2;
   border-radius: 5px;
   padding: 20px;
@@ -201,38 +196,81 @@ input[type="password"] {
   margin: 10px;
 }
 
-.offering-info {
-  text-align: center;
+.offering-card-middle {
+  display: flex;
+  flex-direction: row;
+  border: solid;
+  border-color: hotpink;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: white;
 }
 
-/* @media (max-width: 768px) {
-  .offering-card {
-    grid-template-columns: repeat(auto-fit, minmax(250px));
-  }
-} */
+.offering-card-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 14px;
+  border: 5px;
+  border: solid;
+  border-color: yellow;
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 5px;
+  background-color: white;
+}
+
+.offering-description {
+  text-align: left;
+  margin-left: 15px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
 
 .offering-card img {
   width: 100%;
   max-width: 200px;
   height: auto;
+  max-height: 200px;
   border-radius: 5px;
-  margin-bottom: 10px;
 }
 
 .offering-title {
+  font-family: 'Prata', serif;
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 5px;
+  border: solid;
+  border-radius: 5px;
+  padding: 5px;
+  border-color: cyan;
+  background-color: white;
 }
 
-.offering-description {
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-
-.offering-condition,
-.offering-category-tag {
+.listed-by {
   font-size: 12px;
   color: #888;
   margin-bottom: 5px;
+}
+
+.offering-btn-container {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.view-offering-button {
+  font-size: 14px;
+  padding: 5px;
+  border-radius: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  border-color: rgb(191, 60, 252);
+  background-color: white;
+  color: black;
+}
+
+.view-offering-button:hover {
+  background-color: rgba(191, 60, 252, 0.641);
+  color: white;
+  cursor: pointer;
 }

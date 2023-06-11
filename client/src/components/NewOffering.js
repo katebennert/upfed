@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useHistory } from "react-router";
 
-function NewOffering({ onCreateNewOffering }) {
+function NewOffering({ offerings, setOfferings }) {
    
     const [newOffering, setNewOffering] = useState({
         title: "",
@@ -41,7 +41,7 @@ function NewOffering({ onCreateNewOffering }) {
             setIsLoading(false);
             if (r.ok) {
                 r.json().then(newOfferingData => {
-                    onCreateNewOffering(newOfferingData)
+                    setOfferings([...offerings, newOfferingData]);
                     history.push("/offerings")
             });
             } else {

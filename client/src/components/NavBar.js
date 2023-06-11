@@ -22,7 +22,7 @@ function NavBar() {
         <ul className="nav-links">
           <li><NavLink to={`/offerings`} className="nav-link">View Offerings</NavLink></li>
           <li><NavLink to={`/new-offering`} className="nav-link">Create an Offering</NavLink></li>
-          <li><button onClick={handleLogoutClick} className="logout-button">Logout</button></li>
+          <li><span onClick={handleLogoutClick} className="logout-span">Logout</span></li>
         </ul>
     </nav>
   );
