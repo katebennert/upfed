@@ -38,7 +38,7 @@ function OfferingList({ offerings, setOfferings }) {
                         </div>
                         <div className="offering-btn-container">
                             <NavLink to={`/offerings/${offering.id}`} className="view-offering-nav">
-                                <button className="view-offering-button"><strong>View Offering</strong></button>
+                                <button className="view-offering-button" value={offering.id}>View Offering</button>
                             </NavLink>
                         </div>
                     </div>

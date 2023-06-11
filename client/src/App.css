@@ -112,6 +112,12 @@ input[type="password"] {
   cursor: pointer;
 }
 
+/*LANDING*/
+.landing-container {
+  display: flex;
+  justify-content: center;
+}
+
 /*NAVBAR*/
 
 .navbar {
@@ -267,10 +273,72 @@ input[type="password"] {
   border-color: rgb(191, 60, 252);
   background-color: white;
   color: black;
+  font-weight: bold;
 }
 
 .view-offering-button:hover {
   background-color: rgba(191, 60, 252, 0.641);
+  color: white;
+  cursor: pointer;
+}
+
+/* OFFERING PAGE*/
+
+.offering-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 50px;
+  border-radius: 5px;
+}
+
+.offering-image {
+  width: 350px;
+  height: 350px;
+}
+
+.offering-container h1 {
+  font-family: 'Prata', serif;
+}
+
+.bid-number {
+  font-size: 14px;
+}
+
+.offering-right {
+  width: 45vw;
+  padding-left: 30px;
+  background-color: rgba(0, 255, 255, 0.493);
+  padding-bottom: 40px;
+}
+
+.description {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.condition, .category {
+  font-size: 14px;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.submit-bid-btn {
+  border-radius: 5px;
+  background-color: white;
+  border: solid;
+  border-color: black;
+  color: black;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.submit-bid-btn:hover {
+  background-color: rgba(128, 0, 128, 0.465);
   color: white;
   cursor: pointer;
 }

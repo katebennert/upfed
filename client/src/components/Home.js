@@ -13,8 +13,6 @@ function Home() {
     const { user, setUser } = useContext(UserContext);
     const [offerings, setOfferings] = useState([]);
 
-    // The initial fetch is still unauthorized after reloading which is not setting offerings until refresh. WHY???
-
     useEffect(() => {
         // auto-login
         fetch("/me")
@@ -33,13 +31,13 @@ function Home() {
             <main>
                 <Switch>
                     <Route path="/offerings/:id">
-                        <OfferingPage offerings={offerings} setOfferings={setOfferings}/>
+                        <OfferingPage offerings={offerings} setOfferings={setOfferings} />
                     </Route>
                     <Route path="/new-offering">
                         <NewOffering offerings={offerings} setOfferings={setOfferings} />
                     </Route>
                     <Route path="/offerings">
-                        <OfferingList offerings={offerings} setOfferings={setOfferings}/>
+                        <OfferingList offerings={offerings} setOfferings={setOfferings} />
                     </Route>
                     <Route exact path="/">
                         <Landing />
