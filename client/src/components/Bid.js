@@ -13,25 +13,26 @@ function Bid({ currentOffering, onUpdateClick, onDeleteClick }) {
     }
 
 return (
-    <>{isUpdating ? <UpdateBid currentBid={currentBid} /> :
-    <div>{(currentOffering && currentOffering.bids !== []) ? currentOffering.bids.map((bid) => (
-        <div key={bid.id}>
-            <p>{bid.title}</p>
-            <p>{bid.user.username}</p>
-            {bid.user_id === user.id ? 
-                <div>
-                    <button value={bid.id} onClick={handleUpdateClick} >Edit Bid</button>
-                    <button value={bid.id} onClick={onDeleteClick} >Delete Bid</button>
-                </div> 
+    <div className="bids-container">
+    {isUpdating ? <UpdateBid currentBid={currentBid} /> :
+        <div>{(currentOffering.bids.length !== 0) ? currentOffering.bids.map((bid) => (
+            <div key={bid.id} className="bid-card">
+                <p className="bid-title">{bid.title}</p>
+                <p classN>{bid.user.username}</p>
+                {bid.user_id === user.id ? 
+                    <div className="bid-edit-delete-buttons">
+                        <button value={bid.id} onClick={handleUpdateClick} >Edit Bid</button>
+                        <button value={bid.id} onClick={onDeleteClick} >Delete Bid</button>
+                    </div> 
                 :
-                <></>
+                    <></>
             }
         </div>
-        )) : <><p>There are no bids on this item yet!</p></>
+        )) : <div className="no-bids"><p>There are no bids on this item yet!</p></div>
         }
     </div>
-}
-    </>
+    }
+    </div>
 )
 
 }

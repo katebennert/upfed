@@ -51,11 +51,11 @@ function NewOffering({ offerings, setOfferings }) {
     }
 
   return (
-    <div>
-      <div>
-        <h2>Create Offering</h2>
+    <>
+    <h2>Create a Trade Offer</h2>
+    <div className="create-offering-form">
         <form onSubmit={handleSubmit}>
-            <div>
+            <div className="form-group">
                 <label htmlFor="title">Title</label>
                 <input
                 type="text"
@@ -64,7 +64,7 @@ function NewOffering({ offerings, setOfferings }) {
                 onChange={handleChange}
             />
             </div>
-            <div>
+            <div className="form-group">
                 <label htmlFor="description">Description</label>
                 <input
                 type="text"
@@ -73,7 +73,7 @@ function NewOffering({ offerings, setOfferings }) {
                 onChange={handleChange}
             />
             </div>
-            <div>
+            <div className="form-group">
                 <label htmlFor="image_url">Image URL</label>
                 <input
                 type="text"
@@ -82,7 +82,7 @@ function NewOffering({ offerings, setOfferings }) {
                 onChange={handleChange}
             />
             </div>
-            <div>
+            <div className="form-group">
                 <label htmlFor="condition">Condition</label>
                 <input
                 type="text"
@@ -91,7 +91,7 @@ function NewOffering({ offerings, setOfferings }) {
                 onChange={handleChange}
             />
             </div>
-            <div>
+            <div className="form-group">
                 <label htmlFor="category_tag">Select a Category</label>
                 <input
                 type="text"
@@ -100,7 +100,7 @@ function NewOffering({ offerings, setOfferings }) {
                 onChange={handleChange}
             />
             </div>
-            <div>
+            <div className="form-group">
             <button type="submit">
               {isLoading ? "Loading..." : "Submit Offering"}
             </button>
@@ -113,7 +113,7 @@ function NewOffering({ offerings, setOfferings }) {
           </div>
 
       </div>
-    </div>
+      </>
   );
 }
 

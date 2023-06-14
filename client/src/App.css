@@ -13,7 +13,7 @@ body {
   background-color: whitesmoke;
 }
 
-/*LOGIN/SIGNUP PAGE*/
+/*LOGIN/SIGNUP PAGE/GENERAL FORM*/
 
 .logo {
   padding-left: 1rem;
@@ -341,4 +341,35 @@ input[type="password"] {
   background-color: rgba(128, 0, 128, 0.465);
   color: white;
   cursor: pointer;
+}
+
+/*NEW OFFERING*/
+
+.create-offering-form {
+  margin-left: 400px;
+ width: 50vw;
+}
+
+/*BIDS*/
+
+.bids-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border: solid;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.bid-card {
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 700px;
+  height: auto;
+  max-height: 250px;
+  border: solid;
+  border-color:rgb(66, 197, 66);
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
 }

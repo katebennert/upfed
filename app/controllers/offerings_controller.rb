@@ -6,9 +6,9 @@ class OfferingsController < ApplicationController
     end
 
     def create
-        offering = current_user.offerings.create!(offering_params)
+       # byebug
+        offering = Offering.create!(offering_params)
         render json: offering, status: :created
-        #why is my offering initializing with an empty bid?? i manually set to an empty array for now. the bandaid doesnt work
     end
 
     private

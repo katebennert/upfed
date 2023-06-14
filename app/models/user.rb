@@ -1,6 +1,8 @@
 class User < ApplicationRecord
     has_many :bids
-    has_many :offerings
+    has_many :offerings, through: :bids
+    has_many :listings, foreign_key: 'user_id', class_name: 'Offering'
+
 
     has_secure_password
     validates :username, presence: true, uniqueness: true
