@@ -18,8 +18,8 @@ return (
         <div>{(currentOffering.bids.length !== 0) ? currentOffering.bids.map((bid) => (
             <div key={bid.id} className="bid-card">
                 <p className="bid-title">{bid.title}</p>
-                <p classN>{bid.user.username}</p>
-                {bid.user_id === user.id ? 
+                <p className="bid-username">{bid.user.username}</p>
+                {bid.user.id === user.id ? 
                     <div className="bid-edit-delete-buttons">
                         <button value={bid.id} onClick={handleUpdateClick} >Edit Bid</button>
                         <button value={bid.id} onClick={onDeleteClick} >Delete Bid</button>

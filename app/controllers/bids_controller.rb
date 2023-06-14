@@ -14,14 +14,14 @@ class BidsController < ApplicationController
     end
 
     def destroy
-        current_user = User.find_by(id: session[:user_id])
+        #current_user = User.find_by(id: session[:user_id])
         bid = current_user.bids.find_by(id: params[:id])
         bid.destroy
         head :no_content
     end
 
     def update
-        current_user = User.find_by(id: session[:user_id])
+        #current_user = User.find_by(id: session[:user_id])
         bid = current_user.bids.find_by(id: params[:id])
         bid.update!(bid_params)
         render json: bid, status: :accepted
