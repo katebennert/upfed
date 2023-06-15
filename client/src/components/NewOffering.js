@@ -49,7 +49,7 @@ function NewOffering({ offerings, setOfferings }) {
 
   return (
     <>
-    <h2>Create a Trade Offer</h2>
+    <h2>Make a New Offering</h2>
     <div className="create-offering-form">
         <form onSubmit={handleSubmit}>
             <div className="form-group">

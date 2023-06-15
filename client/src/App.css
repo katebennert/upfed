@@ -296,6 +296,8 @@ input[type="password"] {
 .offering-image {
   width: 350px;
   height: 350px;
+  object-fit: cover;
+  padding-right: 50px;
 }
 
 .offering-container h1 {
@@ -307,10 +309,13 @@ input[type="password"] {
 }
 
 .offering-right {
-  width: 45vw;
+  width: 40vw;
   padding-left: 30px;
   background-color: rgba(0, 255, 255, 0.493);
   padding-bottom: 40px;
+  border: solid;
+  border-color: black;
+  border-radius: 5px;
 }
 
 .description {
@@ -331,7 +336,7 @@ input[type="password"] {
 .submit-bid-btn {
   border-radius: 5px;
   background-color: white;
-  border: solid;
+  /* border: solid; */
   border-color: black;
   color: black;
   padding: 10px;
@@ -378,22 +383,81 @@ select {
 
 .bids-container {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  border: solid;
-  width: 80%;
+  flex-direction: column;
+  border-top: solid;
+  border-color: yellow;
+  width: 100%;
   margin: 0 auto;
+  padding-top: 20px;
+}
+
+.bid-card-pink {
+  width: 80%;
+  box-sizing: border-box;
+  height: auto;
+  max-height: 400px;
+  border: solid;
+  border-color: hotpink;
+  border-radius: 5px;
+  padding: 20px;
+  margin-left: 150px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 .bid-card {
-  width: 100%;
+  width: 80%;
   box-sizing: border-box;
-  max-width: 700px;
   height: auto;
-  max-height: 250px;
+  max-height: 400px;
   border: solid;
   border-color:rgb(66, 197, 66);
   border-radius: 5px;
   padding: 20px;
+  margin-left: 150px;
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.bid-card img, .bid-card-pink img{
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.bid-edit-delete-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.bid-description {
+  width: 90%;
+}
+
+.bid-edit-delete-buttons button {
+  padding: 5px;
+  width: 100%;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.bid-edit-button:hover {
+  background-color: aqua;
+  cursor: pointer;
+}
+
+.bid-delete-button:hover {
+  background-color: yellow;
+  cursor: pointer;
+}
+
+.no-bids {
+  display: flex;
+  justify-content: center;
 }

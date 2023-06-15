@@ -16,13 +16,20 @@ return (
     <div className="bids-container">
     {isUpdating ? <UpdateBid currentBid={currentBid} /> :
         <div>{(currentOffering.bids.length !== 0) ? currentOffering.bids.map((bid) => (
-            <div key={bid.id} className="bid-card">
-                <p className="bid-title">{bid.title}</p>
-                <p className="bid-username">{bid.user.username}</p>
+            <div key={bid.id} className={bid.user.id === user.id ? "bid-card-pink" : "bid-card"}>
+                <div className="bid-left">
+                    <img src={bid.image_url} alt={bid.title} />
+                </div>
+                <div className="bid-right">
+                    <p className="bid-title">{bid.title}</p>
+                    <p className="bid-username">By: {bid.user.username}</p>
+                    <p className="bid-description">{bid.description}</p>
+                    <p className="condition-category-tag">Condition: {bid.condition} &nbsp; Category: {bid.category_tag}</p>
+                </div>
                 {bid.user.id === user.id ? 
                     <div className="bid-edit-delete-buttons">
-                        <button value={bid.id} onClick={handleUpdateClick} >Edit Bid</button>
-                        <button value={bid.id} onClick={onDeleteClick} >Delete Bid</button>
+                        <button className="bid-edit-button" value={bid.id} onClick={handleUpdateClick} >Edit</button>
+                        <button className="bid-delete-button" value={bid.id} onClick={onDeleteClick} >Delete</button>
                     </div> 
                 :
                     <></>

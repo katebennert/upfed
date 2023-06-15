@@ -39,6 +39,7 @@ function OfferingPage({ offerings }) {
                     <img className="offering-image" src={currentOffering.image_url} alt={currentOffering.title}/>
                     <div className="offering-right">
                         <h1> {currentOffering.title} </h1>
+                        <p className="username">posted by: {currentOffering.user.username}</p>
                         <p className="bid-number">🔥 {currentOffering.bids.length} {currentOffering.bids.length === 1 ? "user has" : "users have"} bid on this item</p>
                         <p className="description">{currentOffering.description}</p>
                         <p className="condition">Condition: {currentOffering.condition}</p>
