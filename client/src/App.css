@@ -52,6 +52,7 @@ body {
 
 h2 {
   text-align: center;
+  font-family: 'Prata', serif;
 }
 
 .form-group {
@@ -346,8 +347,31 @@ input[type="password"] {
 /*NEW OFFERING*/
 
 .create-offering-form {
+  font-family: 'Prata', serif;
   margin-left: 400px;
- width: 50vw;
+  width: 50vw;
+}
+
+select {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.create-offering-submit-button {
+  padding: 10px;
+  border-radius: 5px;
+  border-color: hotpink;
+  background-color: pink;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+.create-offering-submit-button:hover {
+  background-color: white;
+  cursor: pointer;
+  color: hotpink;
 }
 
 /*BIDS*/
