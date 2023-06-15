@@ -456,3 +456,14 @@ select {
   display: flex;
   justify-content: center;
 }
+
+.update-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.bid-right-update {
+  width: 100%;
+}

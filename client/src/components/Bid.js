@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { UserContext } from "../context/user";
 import UpdateBid from "./UpdateBid";
 
-function Bid({ bid, onDeleteClick }) {
+function Bid({ bid, onDeleteClick, onUpdateBid }) {
 
     const { user } = useContext(UserContext);
     const [isUpdating, setIsUpdating] = useState(false);
@@ -10,7 +10,7 @@ function Bid({ bid, onDeleteClick }) {
 return (
     <div key={bid.id} className={bid.user.id === user.id ? "bid-card-pink" : "bid-card"}>
         { isUpdating ? (
-            <UpdateBid bid={bid}/>
+            <UpdateBid bid={bid} onUpdateBid={onUpdateBid} setIsUpdating={setIsUpdating} isUpdating={isUpdating} />
         ) : (
             <div className="inner-bid-content">
                 <div className="bid-left">

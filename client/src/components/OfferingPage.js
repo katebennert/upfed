@@ -51,7 +51,7 @@ function OfferingPage({ offerings }) {
                 </div>
                 <div className="bid-container">
                     {showNewBid ? <NewBid currentOffering={currentOffering} onSubmitNewBid={handleSubmitNewBid}/> : <></>}
-                    <BidList currentOffering={currentOffering} onDeleteClick={handleDeleteClick}/>
+                    <BidList currentOffering={currentOffering} onDeleteClick={handleDeleteClick} />
                 </div>
             </div>
 
