@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import NewBid from "./NewBid";
-import Bid from "./Bid";
+import BidList from "./BidList";
 //import { UserContext } from "../context/user";
 import { useParams } from "react-router-dom";
 
@@ -51,7 +51,7 @@ function OfferingPage({ offerings }) {
                 </div>
                 <div className="bid-container">
                     {showNewBid ? <NewBid currentOffering={currentOffering} onSubmitNewBid={handleSubmitNewBid}/> : <></>}
-                    <Bid currentOffering={currentOffering} onDeleteClick={handleDeleteClick}/>
+                    <BidList currentOffering={currentOffering} onDeleteClick={handleDeleteClick}/>
                 </div>
             </div>
 

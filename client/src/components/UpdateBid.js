@@ -1,8 +1,8 @@
 //import React, { useState } from "react";
 
-function UpdateBid({ currentBid }) {
+function UpdateBid({ bid }) {
 
-    console.log(currentBid)
+    console.log(bid)
 
     // function handleUpdateSubmit(e) {
     //     e.preventDefault();
