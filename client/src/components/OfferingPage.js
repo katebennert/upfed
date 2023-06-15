@@ -6,6 +6,8 @@ import { useParams } from "react-router-dom";
 
 // use context for current offering????
 
+// need to fix state for updating bids after anew one is submitted
+
 function OfferingPage({ offerings }) {
     //const { user } = useContext(UserContext);
     const { id } = useParams();
