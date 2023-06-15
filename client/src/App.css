@@ -467,3 +467,28 @@ select {
 .bid-right-update {
   width: 100%;
 }
+
+h3 {
+  font-family: 'Prata', serif;
+}
+
+.bid-username {
+  font-size: 14px;
+}
+
+.bid-description {
+  font-size: 16px;
+}
+
+.bid-save-button {
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.bid-save-button:hover {
+  background-color: greenyellow;
+  cursor: pointer;
+}

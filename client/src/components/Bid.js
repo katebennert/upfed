@@ -17,10 +17,10 @@ return (
                     <img src={bid.image_url} alt={bid.title} />
                 </div>
             <div className="bid-right">
-                <p className="bid-title">{bid.title}</p>
+                <h3 className="bid-title">{bid.title}</h3>
                 <p className="bid-username">By: {bid.user.username}</p>
                 <p className="bid-description">{bid.description}</p>
-                <p className="condition-category-tag">Condition: {bid.condition} &nbsp; Category: {bid.category_tag}</p>
+                <p className="condition-category-tag"><strong>Condition:</strong> {bid.condition} &nbsp; <strong>Category:</strong> {bid.category_tag}</p>
             </div>
             {bid.user.id === user.id ? 
                 <div className="bid-edit-delete-buttons">
