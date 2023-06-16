@@ -20,8 +20,13 @@ function OfferingPage({ offerings }) {
     }, [id, offerings]);
 
     function handleSubmitNewBid(newBid) {
-        setCurrentOffering({...currentOffering, bids: [...currentOffering.bids, newBid]})
+        setCurrentOffering({...currentOffering, bids: [...currentOffering.bids, newBid]});
         setShowNewBid(!showNewBid);
+    }
+
+    function handleUpdateBid(updatedBid) {
+        const updatedBidsArray = currentOffering.bids.map(b => b.id === updatedBid.id ? updatedBid : b);
+        setCurrentOffering({...currentOffering, bids: updatedBidsArray});
     }
 
     function handleDeleteClick(e) {
@@ -32,6 +37,8 @@ function OfferingPage({ offerings }) {
         })
         .then(setCurrentOffering({...currentOffering, bids: filteredBids}))
     }
+
+    console.log(currentOffering)
 
     return (
         <>
@@ -53,7 +60,7 @@ function OfferingPage({ offerings }) {
                 </div>
                 <div className="bid-container">
                     {showNewBid ? <NewBid currentOffering={currentOffering} onSubmitNewBid={handleSubmitNewBid}/> : <></>}
-                    <BidList currentOffering={currentOffering} onDeleteClick={handleDeleteClick} />
+                    <BidList currentOffering={currentOffering} onDeleteClick={handleDeleteClick} onUpdateBid={handleUpdateBid} />
                 </div>
             </div>
 
