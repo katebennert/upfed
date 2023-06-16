@@ -1,9 +1,6 @@
 class BidsController < ApplicationController
 
     # don't need index (offering will pulls bids w nested data)
-    def index
-        byebug
-    end
 
     def create
         offering = Offering.find_by(id: params[:offering_id])
@@ -14,17 +11,23 @@ class BidsController < ApplicationController
     end
 
     def destroy
-        #current_user = User.find_by(id: session[:user_id])
         bid = current_user.bids.find_by(id: params[:id])
-        bid.destroy
-        head :no_content
+        if bid
+            bid.destroy
+            head :no_content
+        else 
+            head :no_content, status: :unauthorized
+        end
     end
 
     def update
-        #current_user = User.find_by(id: session[:user_id])
         bid = current_user.bids.find_by(id: params[:id])
-        bid.update!(bid_params)
-        render json: bid, status: :accepted
+        if bid
+            bid.update!(bid_params)
+            render json: bid, status: :accepted
+        else
+            head :no_content, status: :unauthorized
+        end
     end
 
     private
