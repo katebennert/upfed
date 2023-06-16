@@ -12,6 +12,7 @@ class BidsController < ApplicationController
 
     def destroy
         bid = current_user.bids.find_by(id: params[:id])
+        # do i need the below if I can just use a record not found rescue?
         if bid
             bid.destroy
             head :no_content
