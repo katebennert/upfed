@@ -102,6 +102,7 @@ input[type="password"] {
   width: 80%;
   color: #fff;
   padding-left: 5px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .sign-up-login-switch {
@@ -346,6 +347,40 @@ input[type="password"] {
 .submit-bid-btn:hover {
   background-color: rgba(128, 0, 128, 0.465);
   color: white;
+  cursor: pointer;
+}
+
+/*NEW BID FORM*/
+
+.new-bid-spacer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.new-bid-form-container {
+  border: solid;
+  border-radius: 5px;
+  border-color: aqua;
+  width: 60%;
+  margin-bottom: 20px;
+}
+
+.inner-bid-form {
+  padding-left: 100px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.new-bid-button-container button {
+  padding: 10px;
+  border: solid;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.new-bid-button-container button:hover {
+  background-color: aqua;
   cursor: pointer;
 }
 

@@ -18,10 +18,6 @@ function NewBid({ currentOffering, onSubmitNewBid }) {
         const name = e.target.id;
         let value = e.target.value;
 
-        if (e.target.type === "select-one") {
-            value = Number(value)
-        }
-
         setNewBid({
             ...newBid,
             [name]: value
@@ -48,11 +44,12 @@ function NewBid({ currentOffering, onSubmitNewBid }) {
     }
 
   return (
-    <div>
-      <div>
+    <div className="new-bid-spacer">
+    <div className="new-bid-form-container">
         <h2>Create Bid</h2>
+        <div className="inner-bid-form">
         <form onSubmit={handleSubmit}>
-            <div>
+            <div className="form-group">
                 <label htmlFor="title">Title</label>
                 <input
                 type="text"
@@ -61,7 +58,8 @@ function NewBid({ currentOffering, onSubmitNewBid }) {
                 onChange={handleChange}
             />
             </div>
-            <div>
+
+            <div className="form-group">
                 <label htmlFor="description">Description</label>
                 <input
                 type="text"
@@ -70,7 +68,8 @@ function NewBid({ currentOffering, onSubmitNewBid }) {
                 onChange={handleChange}
             />
             </div>
-            <div>
+
+            <div className="form-group">
                 <label htmlFor="image_url">Image URL</label>
                 <input
                 type="text"
@@ -79,25 +78,42 @@ function NewBid({ currentOffering, onSubmitNewBid }) {
                 onChange={handleChange}
             />
             </div>
-            <div>
+
+            <div className="form-group">
                 <label htmlFor="condition">Condition</label>
-                <input
-                type="text"
-                id="condition"
-                value={newBid.condition}
-                onChange={handleChange}
-            />
+                <select
+                    type="select-one"
+                    id="condition"
+                    value={newBid.condition}
+                    onChange={handleChange}
+                >
+                    <option value="">-Select One-</option>
+                    <option>Used</option>
+                    <option>Gently-used</option>
+                    <option>Good</option>
+                    <option>Very Good</option>
+                    <option>Brand New</option>
+                </select>
             </div>
-            <div>
+
+            <div className="form-group">
                 <label htmlFor="category_tag">Select a Category</label>
-                <input
-                type="text"
-                id="category_tag"
-                value={newBid.category_tag}
-                onChange={handleChange}
-            />
+                <select
+                    type="select-one"
+                    id="category_tag"
+                    value={newBid.category_tag}
+                    onChange={handleChange}
+                >
+                    <option value="">-Select One-</option>
+                    <option>Clothing</option>
+                    <option>Toys and Games</option>
+                    <option>Books and Comics</option>
+                    <option>Sports Equipment</option>
+                    <option>Newborn and Babies</option>
+                </select>
             </div>
-            <div>
+
+            <div className="form-group">
                 <label htmlFor="message">Message the Trader:</label>
                 <input
                 type="text"
@@ -106,20 +122,22 @@ function NewBid({ currentOffering, onSubmitNewBid }) {
                 onChange={handleChange}
             />
             </div>
-            <div>
-            <button type="submit">
-              {isLoading ? "Loading..." : "Submit Offering"}
-            </button>
-          </div>
-          <div>
-            {errors.map((err) => (
-              <p key={err}>{err}</p>
-            ))}
-          </div>
-         </form>
 
+            <div className="new-bid-button-container">
+                <button type="submit">
+                    {isLoading ? "Loading..." : "Submit Bid"}
+                </button>
+            </div>
+
+            <div className="new-bid-errors-container">
+                {errors.map((err) => (
+                    <p key={err} className="errors-container" >{err}</p>
+                ))}
+            </div>
+         </form>
+         </div>
       </div>
-    </div>
+      </div>
   );
 }
 

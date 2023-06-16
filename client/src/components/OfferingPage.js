@@ -38,8 +38,6 @@ function OfferingPage({ offerings }) {
         .then(setCurrentOffering({...currentOffering, bids: filteredBids}))
     }
 
-    console.log(currentOffering)
-
     return (
         <>
             {currentOffering ? (

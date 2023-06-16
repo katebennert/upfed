@@ -119,7 +119,7 @@ function NewOffering({ offerings, setOfferings }) {
           </form>
           <div>
             {errors.map((err) => (
-              <p key={err}>{err}</p>
+              <p key={err} className="errors-container">{err}</p>
             ))}
           </div>
 
