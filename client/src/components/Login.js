@@ -36,7 +36,7 @@ function Login() {
 
             <div className="welcome-container">
                 <h1>Welcome to UpFed!</h1>
-                <h3>We're a community of fed-up parents with too much stuff. Login or sign-up to trade the stuff your kid needed last month for the stuff they'll need next month.</h3>
+                <h3>Are you a fed-up parent with too much stuff? Sign up to trade the stuff your kid needed last month for the stuff they'll need next month.</h3>
             </div>
 
          </div>
