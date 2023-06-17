@@ -89,7 +89,7 @@ Features:
 * Bid On An Offering
 * Edit or Delete a Bid
 
-View a full walk through here.
+[View a full walk through here.](https://www.loom.com/share/743cf1ddde3b4de4ac294217d1269fb6?sid=fcfc8d82-0d91-47bd-bfca-ddd505a5d8c6)
 
 ## License
 
